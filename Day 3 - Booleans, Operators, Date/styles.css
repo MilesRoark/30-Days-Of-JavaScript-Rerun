@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Kaushan+Script&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(21, 19, 19);
+  font-family: "Kaushan Script", sans-serif;
+}
+
+.title {
+  font-size: 4rem;
+  margin: 5vh 0 0 10vw;
+  color: rgb(201, 178, 1);
+  text-decoration: underline;
+  text-shadow: 2px 2px 2px rgb(186, 48, 48);
+}
+
+.comment {
+  margin: 5px 0 5px 20vw;
+  color: chocolate;
+  font-size: 1rem;
+}
+
+.leveltitle {
+  text-align: center;
+  font-size: 2rem;
+  color: green;
+}
+
+.qlv1,
+.qlv2,
+.qlv3 {
+  width: 80vw;
+  margin-top: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 40px;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  gap: 5px;
+}
+
+.inners {
+  font-size: 0.7rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  margin-left: 30px;
+}
+
+.examples {
+  border: 1px solid white;
+  background-color: rgba(94, 94, 226, 0.211);
+  color: #b5a5b7;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+  width: 70%;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  border-radius: 2px;
+  margin-top: 10px;
+  p {
+    font-family: "Cutive Mono", sans-serif;
+    margin-left: 60px;
+  }
+}
+
+.padding {
+  width: 100%;
+  height: 450px;
+}
+
+footer {
+  color: rgb(152, 90, 160);
+  text-align: center;
+  margin-top: 20px;
+}
