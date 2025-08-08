@@ -42,8 +42,8 @@
         '<strong>a</strong> is less than <strong>b</strong>'. <br />Try to
         implement it in two ways
         <ul>
-          <li>using if else</li>
-          <li>ternary operator</li>
+          <li class="innerlist">using if else</li>
+          <li class="innerlist">ternary operator</li>
         </ul>
         <div class="examples">
           <p>let a = 4</p>
@@ -66,120 +66,57 @@
     <h3 class="leveltitle">Level 2</h3>
     <ol class="qlv2">
       <li>
-        Write a script that prompt the user to enter base and height of the
-        triangle and calculate an area of a triangle (area = 0.5 x b x h).
+        Write a code which can give grades to students according to theirs
+        scores:
+        <ul class="innerlist">
+          <li>80 - 100, A</li>
+          <li>70 - 89, B</li>
+          <li>60 - 69, C</li>
+          <li>50 - 59, D</li>
+          <li>0 - 49, F</li>
+        </ul>
+      </li>
+      <li>
+        <code>prompt("What month is it?)</code> based on the response alert one
+        of the following:
+        <ul class="innerlist">
+          <li>if response is September, October or November, then Autumn.</li>
+          <li>if response is December, January or February, then Winter.</li>
+          <li>if response is March, April or May, then Spring</li>
+          <li>if response is June, July or August, then Summer</li>
+        </ul>
+      </li>
+      <li>
+        Check if it's a workday or the weekend. Your script should take a day as
+        the input.
         <div class="examples">
-          <p>Enter base: 20</p>
-          <p>Enter height: 10</p>
-          <p>The area of the triangle is 100</p>
+          <p><code>prompt(what day is it?)</code> input:Saturday</p>
+          <p><code>alert("it's the weekend")</code></p>
+          <p><code>prompt(what day is it?)</code> input:saturDay</p>
+          <p><code>alert("it's the weekend")</code></p>
+          <p><code>prompt(what day is it?)</code> input:Friday</p>
+          <p><code>alert("it's a workday")</code></p>
+          <p><code>prompt(what day is it?)</code> input:FriDAy</p>
+          <p><code>alert("it's a workday")</code></p>
         </div>
-      </li>
-      <li>
-        Write a script that prompt the user to enter side a, side b, and side c
-        of the triangle and and calculate the perimeter of triangle (perimeter =
-        a + b + c)
-        <div class="examples">
-          <p>Enter side a: 5</p>
-          <p>Enter side b: 4</p>
-          <p>Enter side c: 3</p>
-          <p>The perimeter of the triangle is 12</p>
-        </div>
-      </li>
-      <li>
-        Get length and width using prompt and calculate an area of rectangle
-        (area = length x width and the perimeter of rectangle (perimeter = 2 x
-        (length + width)))
-      </li>
-      <li>
-        Get radius using prompt and calculate the area of a circle (area = pi x
-        r x r) and circumference of a circle(c = 2 x pi x r) where pi = 3.14.
-      </li>
-      <li>Calculate the slope, x-intercept and y-intercept of y = 2x -2</li>
-      <li>
-        Slope is m = (y2-y1)/(x2-x1). Find the slope between point (2, 2) and
-        point(6,10)
-      </li>
-      <li>Compare the slope of above two questions.</li>
-      <li>
-        Calculate the value of y (y = x2 + 6x + 9). Try to use different x
-        values and figure out at what x value y is 0.
-      </li>
-      <li>
-        Write a script that prompt a user to enter hours and rate per hour.
-        Calculate pay of the person?
-        <div class="examples">
-          <p>Enter hours: 40</p>
-          <p>Enter rate per hour: 28</p>
-          <p>Your weekly earning is 1120</p>
-        </div>
-      </li>
-      <li>
-        If the length of your name is greater than 7 say, your name is long else
-        say your name is short.
-      </li>
-      <li>
-        Compare your first name length and your family name length and you
-        should get this output.
-        <div class="examples">
-          <p>let firstName = 'Asabeneh'</p>
-          <p>let lastName = 'Yetayeh'</p>
-        </div>
-        <div class="examples">
-          <p>
-            Your first name, Asabeneh is longer than your family name, Yetayeh
-          </p>
-        </div>
-      </li>
-      <li>
-        Declare two variables myAge and yourAge and assign them initial values
-        and myAge and yourAge.
-        <div class="examples">
-          <p>let myAge = 250</p>
-          <p>let yourAge = 25</p>
-        </div>
-        <div class="examples">
-          <p>I am 225 years older than you.</p>
-        </div>
-      </li>
-      <li>
-        Using prompt get the year the user was born and if the user is 18 or
-        above allow the user to drive if not tell the user to wait a certain
-        amount of years.
-        <div class="examples">
-          <p>Enter birth year: 1995</p>
-          <p>You are 25. You are old enough to drive</p>
-          <p>Enter birth year: 2005</p>
-          <p>You are 15. You will be allowed to drive after 3 years.</p>
-        </div>
-      </li>
-      <li>
-        Write a script that prompt the user to enter number of years. Calculate
-        the number of seconds a person can live. Assume some one lives just
-        hundred years
-        <div class="examples">
-          <p>Enter number of years you live: 100</p>
-          <p>You lived 3153600000 seconds.</p>
-        </div>
-      </li>
-      <li>
-        Create a human readable time format using the Date time object
-        <ol class="inners">
-          <li>YYYY-MM-DD HH:mm</li>
-          <li>DD-MM-YYYY HH:mm</li>
-          <li>DD/MM/YYYY HH:mm</li>
-        </ol>
       </li>
     </ol>
     <h3 class="leveltitle">Level 3</h3>
     <ol class="qlv3">
       <li>
-        Create a human readable time format using the Date time object. The hour
-        and the minute should be all the time two digits(7 hours should be 07
-        and 5 minutes should be 05 )
-        <ol class="inners">
-          <li>YYY-MM-DD HH:mm eg. 20120-01-02 07:05</li>
-        </ol>
+        Write a program that returns the number of days in a month.
+        <div class="examples">
+          <p>Enter month: January</p>
+          <p>There are 31 days in January.</p>
+          <p>Enter month: JANUARY</p>
+          <p>There are 31 days in January.</p>
+          <p>Enter month: February</p>
+          <p>There are 28 days in February.</p>
+          <p>Enter month: FEbruary</p>
+          <p>There are 28 days in February.</p>
+        </div>
       </li>
+      <li>Write the previous program for a leap year scenario.</li>
     </ol>
     <div class="padding"></div>
     <footer>&copy;2025 codingMiles, original repo by Asabeneh</footer>

@@ -11,6 +11,9 @@
 body {
   background-color: rgb(21, 19, 19);
   font-family: "Kaushan Script", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -73,7 +76,7 @@ strong {
 .examples {
   border: 1px solid white;
   background-color: rgba(94, 94, 226, 0.211);
-  color: #b5a5b7;
+  color: #fdf1ff;
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
@@ -84,19 +87,27 @@ strong {
   font-weight: bolder;
   border-radius: 2px;
   margin-top: 10px;
+  text-shadow: 1px 1px black;
   p {
     font-family: "Cutive Mono", sans-serif;
     margin-left: 60px;
+    margin-top: 5px;
   }
+}
+
+.innerlist {
+  margin-left: 2rem;
 }
 
 .padding {
   width: 100%;
-  height: 450px;
+  height: 50px;
 }
 
 footer {
   color: rgb(152, 90, 160);
   text-align: center;
-  margin-top: 20px;
+  padding: 20px 0;
+  margin: auto;
+  font-size: 1rem;
 }
