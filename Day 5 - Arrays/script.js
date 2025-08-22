@@ -1,14 +1,49 @@
 //-----------------------------------Level 1-------------------------------
 // Declare an empty array.
+const emptyArr = [];
+console.log(emptyArr);
 
 // Declare an array with more than 5 elements:
 //              Find the length of the array.
 //              Get the first, middle and last items of the array.
 
+const carCompanies = [
+  "Tesla",
+  "Rivian",
+  "Ford",
+  "Honda",
+  "Peugeot",
+  "Toyota",
+  "Porsche",
+  "Hyundai",
+];
+
+console.log(carCompanies.length);
+
+const firstItem = carCompanies[0];
+console.log(firstItem);
+
+let middleItem;
+if (carCompanies.length % 2 === 0) {
+  const midComp1 = carCompanies.length / 2 - 1;
+  const midComp2 = carCompanies.length / 2;
+  middleItem = [carCompanies[midComp1], carCompanies[midComp2]];
+} else {
+  middleItem = carCompanies[Math.floor(carCompanies.length / 2)];
+}
+console.log(middleItem);
+
+const lastItem = carCompanies[carCompanies.length - 1];
+console.log(lastItem);
+
 // Declare an array of more than 5 items:
 //              Name the array mixedDataTypes.
 //              Populate the array with different data types.
 //              Find the length of the array.
+
+const mixedDataTypes = ["20", "House", "Pencil", true, "42", {}, "Tracks"];
+console.log(mixedDataTypes);
+console.log(mixedDataTypes.length);
 
 // Declare an array called itCompanies:
 //              assign the values:
@@ -32,6 +67,58 @@
 //              Remove the middle company or companies.
 //              Remove the last company.
 //              Clear the array.
+
+const itCompanies = [
+  "google",
+  "microsoft",
+  "apple",
+  "openai",
+  "amazon",
+  "meta",
+  "anthropic",
+];
+
+console.log(itCompanies);
+
+console.log(itCompanies.length);
+
+const firstIt = itCompanies[0];
+console.log(firstIt);
+
+let middleIt;
+if (itCompanies.length % 2 === 0) {
+  const first = itCompanies.length / 2 - 1;
+  const second = itCompanies.length / 2;
+  middleIt = [itCompanies[first], itCompanies[second]];
+} else {
+  middleIt = itCompanies[Math.floor(itCompanies.length / 2)];
+}
+console.log(middleIt);
+
+console.log(itCompanies[0]);
+console.log(itCompanies[1]);
+console.log(itCompanies[2]);
+console.log(itCompanies[3]);
+console.log(itCompanies[4]);
+console.log(itCompanies[5]);
+console.log(itCompanies[6]);
+
+const allComps = itCompanies.map((comp) => comp.toUpperCase());
+console.log(allComps);
+
+const itText = `${itCompanies.join(",")} are all current players in tech.`;
+console.log(itText);
+
+// const query = prompt("Please enter a company name.");
+// const queryLowered = query ? query.toLowerCase() : "";
+
+// if (!queryLowered) {
+//   alert("Please enter a company name.");
+// } else if (itCompanies.includes(queryLowered)) {
+//   alert(`${queryLowered} is on the List.`);
+// } else {
+//   alert("Company not found.");
+// }
 
 // ---------------------------------Level 2---------------------------------------
 
