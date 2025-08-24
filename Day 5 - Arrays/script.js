@@ -1,12 +1,13 @@
-//-----------------------------------Level 1-------------------------------
-// Declare an empty array.
+//...................................Level 1...............................
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx     Question(1)   xxxxxxxxxxxxxxxxxxxxxx
+
+//              Declare an empty array.
 const emptyArr = [];
 console.log(emptyArr);
 
-// Declare an array with more than 5 elements:
-//              Find the length of the array.
-//              Get the first, middle and last items of the array.
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx     Question(2)   xxxxxxxxxxxxxxxxxxxxxxxx
 
+//              Declare an array with more than 5 elements:
 const carCompanies = [
   "Tesla",
   "Rivian",
@@ -18,8 +19,10 @@ const carCompanies = [
   "Hyundai",
 ];
 
+//              Find the length of the array.
 console.log(carCompanies.length);
 
+//              Get the first, middle and last items of the array.
 const firstItem = carCompanies[0];
 console.log(firstItem);
 
@@ -36,38 +39,22 @@ console.log(middleItem);
 const lastItem = carCompanies[carCompanies.length - 1];
 console.log(lastItem);
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxx    Question(3)  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 // Declare an array of more than 5 items:
 //              Name the array mixedDataTypes.
-//              Populate the array with different data types.
-//              Find the length of the array.
-
 const mixedDataTypes = ["20", "House", "Pencil", true, "42", {}, "Tracks"];
+
+//              Populate the array with different data types.
 console.log(mixedDataTypes);
+
+//              Find the length of the array.
 console.log(mixedDataTypes.length);
 
+//xxxxxxxxxxxxxxxxxxxxxxxxx    Question(4)  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // Declare an array called itCompanies:
 //              assign the values:
 //                  Google, Microsoft, Apple, OpenAi, Amazon, Meta, Anthropic
-//              Print the contents of the array to the console.
-//              How many companies are in the array?
-//              Print the first, middle and last company.
-//              Print each company.
-//              Change each companies name to uppercase and print the result.
-//              print "{company names} are current players in tech."
-//              Check if a company exists in the array.
-//                      If it exists return the companies name
-//                      If not return "company not found."
-//              Filter out companies with multiple o's in their names without using the filter method.
-//              Use the sort() method on the array.
-//              Use the reverse() method on the array.
-//              slice out the first 3 companies.
-//              slice out the last three companies.
-//              slice out the middle company or companies.
-//              Remove the first company.
-//              Remove the middle company or companies.
-//              Remove the last company.
-//              Clear the array.
-
 const itCompanies = [
   "google",
   "microsoft",
@@ -77,11 +64,13 @@ const itCompanies = [
   "meta",
   "anthropic",
 ];
+//              Print the contents of the array to the console.
 
 console.log(itCompanies);
-
+//              How many companies are in the array?
 console.log(itCompanies.length);
 
+//              Print the first, middle and last company.
 const firstIt = itCompanies[0];
 console.log(firstIt);
 
@@ -95,6 +84,10 @@ if (itCompanies.length % 2 === 0) {
 }
 console.log(middleIt);
 
+const lastIt = itCompanies[itCompanies.length - 1];
+console.log(lastIt);
+
+//              Print each company.
 console.log(itCompanies[0]);
 console.log(itCompanies[1]);
 console.log(itCompanies[2]);
@@ -103,12 +96,17 @@ console.log(itCompanies[4]);
 console.log(itCompanies[5]);
 console.log(itCompanies[6]);
 
+//              Change each companies name to uppercase and print the result.
 const allComps = itCompanies.map((comp) => comp.toUpperCase());
 console.log(allComps);
 
+//              print "{company names} are current players in tech."
 const itText = `${itCompanies.join(",")} are all current players in tech.`;
 console.log(itText);
 
+//              Check if a company exists in the array.
+//                      If it exists return the companies name
+//                      If not return "company not found."
 // const query = prompt("Please enter a company name.");
 // const queryLowered = query ? query.toLowerCase() : "";
 
@@ -120,7 +118,94 @@ console.log(itText);
 //   alert("Company not found.");
 // }
 
-// ---------------------------------Level 2---------------------------------------
+//              Filter out companies with multiple o's in their names without using the filter method.
+const companiesWithMulti = [];
+const companiesWithoutMulti = [];
+
+for (let i = 0; i < itCompanies.length; i++) {
+  const company = itCompanies[i];
+  let count = 0;
+  for (let j = 0; j < company.length; j++) {
+    if (company[j].includes("o")) {
+      count++;
+    }
+  }
+  if (count >= 2) {
+    companiesWithMulti.push(company);
+  }
+  if (count <= 1) {
+    companiesWithoutMulti.push(company);
+  }
+}
+console.log(companiesWithMulti);
+console.log(companiesWithoutMulti);
+
+//              Use the sort() method on the array.
+const copyItCompanies = [...itCompanies];
+
+const sortedCopyItCompanies = copyItCompanies.sort();
+console.log(sortedCopyItCompanies);
+console.log(itCompanies);
+
+//              Use the reverse() method on the array.
+const reversedCopyItCompanies = copyItCompanies.reverse();
+console.log(reversedCopyItCompanies);
+
+//              slice out the first 3 companies.
+const slicedItCompanies = itCompanies.slice(0, 3);
+console.log(slicedItCompanies);
+
+//              slice out the last three companies.
+const reversedSlicedItCompanies = itCompanies.slice(-3);
+console.log(reversedSlicedItCompanies);
+
+//              slice out the middle company or companies.
+let middleCompany;
+if (itCompanies.length % 2 === 0) {
+  const mid1 = itCompanies.length / 2 - 1;
+  middleCompany = itCompanies.slice(mid1, mid1 + 2);
+} else {
+  const mid1 = Math.floor(itCompanies.length / 2);
+  middleCompany = itCompanies.slice(mid1, mid1 + 1);
+}
+console.log(middleCompany);
+
+//              Remove the first company.
+const itCompanies1 = [...itCompanies];
+const removedFirst = itCompanies1.shift();
+console.log(removedFirst);
+console.log(itCompanies1);
+
+//              Remove the middle company or companies.
+const itCompanies2 = [...itCompanies];
+let removedMiddle;
+if (itCompanies2.length % 2 === 0) {
+  const mid1 = itCompanies2.length / 2 - 1;
+  removedMiddle = itCompanies2.splice(mid1, 2);
+} else {
+  const mid = Math.floor(itCompanies2.length / 2);
+  removedMiddle = itCompanies2.splice(mid, 1);
+}
+console.log(removedMiddle);
+console.log(itCompanies2);
+
+//              Remove the last company.
+const itCompanies3 = [...itCompanies];
+const removedLast = itCompanies3.pop();
+console.log(removedLast);
+console.log(itCompanies3);
+
+//              Clear the array.
+const itCompanies4 = [...itCompanies];
+itCompanies4.length = 0;
+
+console.log(itCompanies);
+console.log(itCompanies1);
+console.log(itCompanies2);
+console.log(itCompanies3);
+console.log(itCompanies4);
+
+// ................................Level 2...................................
 
 // Create 2 new files:
 //              A countries.js file to store the countries array.
@@ -145,7 +230,8 @@ console.log(itText);
 // Concatenate these two arrays:
 //              const frontEnd = ["HTML", "CSS", "JS", "React", "Redux"]
 //              const backEnd = ["Node", "Express", "MongoDB"]
-//---------------------------------------Level 3----------------------------------
+
+//....................................Level 3..................................
 
 // Complete the following exercises using this array:
 //              const ages = [19, 22,19, 24, 20, 25, 26, 24, 25, 24 ]
