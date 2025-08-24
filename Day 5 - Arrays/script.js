@@ -207,46 +207,172 @@ console.log(itCompanies4);
 
 // ................................Level 2...................................
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxx   Question(1)   xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // Create 2 new files:
 //              A countries.js file to store the countries array.
 //              A web_techs.js file to store the webTechs array.
 //              Access both files in the main script file.
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxx   Question(2)    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // "I love teaching and empowering people. I teach HTML, CSS, JS, React, Python."
 //              Create an array of all the words in the sentence without the punctuation.
-//              How many words are in the sentence?
+console.log("----------Answers continue here-------------------------");
+const newString =
+  "I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.";
+const splitNew = newString.split(" ");
+console.log(splitNew);
 
+const cleaningReg = /\w+/gi;
+const cleanedNewString = newString.match(cleaningReg);
+console.log(cleanedNewString);
+//              How many words are in the sentence?
+console.log(cleanedNewString.length);
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxx   Question(3)    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // Given this shopping list:
 //              ["MilK", "Coffee", "Tea", "Honey"]
 //                      add "Meat" as the first item on the list.
+const shoppingList = ["MilK", "Coffee", "Tea", "Honey"];
+shoppingList.unshift("Meat");
+console.log(shoppingList);
 //                      add "Sugar" as the last item on the list
+shoppingList.push("Sugar");
+console.log(shoppingList);
 //                      remove "Honey" from the list.
+console.log(shoppingList.indexOf("Honey"));
+shoppingList.splice(4, 1);
+console.log(shoppingList);
 //                      change "Tea" to "Earl Grey"
+console.log(shoppingList.indexOf("Tea"));
+shoppingList[3] = "Earl Grey";
+console.log(shoppingList);
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxx  Question(4)    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+const countries = [
+  "Albania",
+  "Bolivia",
+  "Canada",
+  "Denmark",
+  "Ethiopia",
+  "Finland",
+  "Germany",
+  "Hungary",
+  "Ireland",
+  "Japan",
+  "Kenya",
+];
 // Check if Ethiopia exists in the countries array, if not add it.
+console.log(countries.includes("Ethiopia"));
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxx Question(5)    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+const webTechs = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+];
 // Check if Sass exists in the webTechs array. If not add it and print the array.
+console.log(webTechs.includes("Sass"));
+webTechs.push("Sass");
+console.log(webTechs);
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxx  Question(6)   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // Concatenate these two arrays:
-//              const frontEnd = ["HTML", "CSS", "JS", "React", "Redux"]
-//              const backEnd = ["Node", "Express", "MongoDB"]
+const frontEnd = ["HTML", "CSS", "JS", "React", "Redux"];
+const backEnd = ["Node", "Express", "MongoDB"];
 
+const concatenatedArr = [...frontEnd, ...backEnd];
+console.log(concatenatedArr);
+const concatenatedMethod2 = frontEnd.concat(backEnd);
+console.log(concatenatedMethod2);
 //....................................Level 3..................................
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxx  Question(1)    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // Complete the following exercises using this array:
-//              const ages = [19, 22,19, 24, 20, 25, 26, 24, 25, 24 ]
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
 //                      Sort the array
+ages.sort((a, b) => b - a);
+console.log(ages);
+const ageCopy = [...ages, 100];
+ageCopy.sort();
+console.log(ageCopy);
 //                      Find the min and max age
+const ageCopy2 = [...ages];
+ageCopy2.sort((a, b) => a - b);
+const maxVal = ageCopy2[ageCopy2.length - 1];
+console.log(maxVal);
+const minVal = ageCopy2[0];
+console.log(minVal);
+
 //                      Find the median age(s)
-//                          formula: median = middle age(s) / 2
+//                          formula: median = mid1 + mid2 / 2 for an even array;
+//                                   median = mid for an array of odd length
+let middleAge;
+let median;
+if (ages.length % 2 === 0) {
+  const min1 = ages.length / 2 - 1;
+  const min2 = ages.length / 2;
+  middleAge = [ages[min1], ages[min2]];
+  median = (ages[min1] + ages[min2]) / 2;
+} else {
+  const min = Math.floor(ages.length / 2);
+  middleAge = ages[min];
+  median = min;
+}
+console.log(middleAge);
+console.log(median);
+
 //                      Find the average age
 //                          formula: average = sum of ages / number of ages
+let sum = 0;
+for (let i = 0; i < ages.length; i++) {
+  sum += ages[i];
+}
+console.log(sum);
+const average = sum / ages.length;
+console.log(average);
+
+const sum2 = ages.reduce((acc, currVal) => acc + currVal, 0);
+console.log(sum2);
 //                      Find the range
 //                          formula: range = max - min
+const range = maxVal - minVal;
+console.log(range);
 //                      Compare the value of (min - average) and (max - average), use Math.abs() method.
+const minComp = Math.abs(minVal - average);
+const maxComp = Math.abs(maxVal - average);
+console.log(minComp);
+console.log(maxComp);
+console.log(minComp > maxComp);
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxx  Question(2)   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // Slice the first ten countries from the countries array.
+const countries2 = [...countries];
+console.log(countries2);
+console.log(countries2.length);
+const countries2Sliced = countries2.slice(-1);
+console.log(countries2Sliced);
 
 // Find the middle country(ies).
+let middleCount;
+if (countries.length % 2 === 0) {
+  const mid1 = countries.length / 2 - 1;
+  const mid2 = countries.length / 2;
+  middleCount = [countries[mid1], countries[mid2]];
+} else {
+  const mid = Math.floor(countries.length / 2);
+  middleCount = countries[mid];
+}
+console.log(middleCount);
 
 // Split the array in to two different arrays.
+const arr1 = countries.slice(0, 6);
+const arr2 = countries.slice(6, 12);
+console.log(arr1);
+console.log(arr2);
+console.log(
+  "-----------Everything below here is for Level 2 question 1---------"
+);

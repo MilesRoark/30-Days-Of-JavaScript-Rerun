@@ -1,4 +1,4 @@
-const webTechs = [
+const webTechs1 = [
   "HTML",
   "CSS",
   "JavaScript",
@@ -7,4 +7,4 @@ const webTechs = [
   "Node",
   "MongoDB",
 ];
-console.log(webTechs);
+console.log(webTechs1);

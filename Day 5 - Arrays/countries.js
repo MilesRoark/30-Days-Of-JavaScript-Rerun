@@ -1,4 +1,4 @@
-const countries = [
+const countries1 = [
   "Albania",
   "Bolivia",
   "Canada",
@@ -11,4 +11,4 @@ const countries = [
   "Japan",
   "Kenya",
 ];
-console.log(countries);
+console.log(countries1);
