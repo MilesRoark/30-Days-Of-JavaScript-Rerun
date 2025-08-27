@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days of Javascript [Asabeneh - Github]</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <script src="countries.js" defer></script>
+    <script src="web_techs.js" defer></script>
+  </head>
+  <body>
+    <h1 class="title">Day 6: Loops</h1>
+    <h4 class="comment">answers will display in the console at the bottom</h4>
+    <main>
+      <h3 class="leveltitle">Level 1</h3>
+      <ol class="qlv1">
+        <li>
+          Iterate from 0 to 10 using a <code>for loop</code>, a
+          <code>while</code>loop and a <code>do while</code>loop.
+        </li>
+        <li>
+          Iterate from 10 to 0 using a <code>for loop</code>, a
+          <code>while</code>loop and a <code>do while</code>loop.
+        </li>
+        <li>Iterate from 0 to n using a <code>for loop</code>.</li>
+        <li>
+          <p>
+            Create this pattern in the console using a <code>for loop</code>:
+          </p>
+          <div class="examples">
+            @ <br />
+            @@ <br />
+            @@@ <br />
+            @@@@ <br />
+            @@@@@ <br />
+            @@@@@@ <br />
+            @@@@@@@
+          </div>
+        </li>
+        <li>
+          <code>log()</code> the following in the console using a
+          <code>for loop</code>:
+          <div class="examples">
+            0 * 0 = 0 <br />
+            1 * 1 = 1 <br />
+            2 * 2 = 4 <br />
+            3 * 3 = 9 <br />
+            4 * 4 = 16 <br />
+            5 * 5 = 25 <br />
+            6 * 6 = 36 <br />
+            7 * 7 = 49 <br />
+            8 * 8 = 64 <br />
+            9 * 9 = 81 <br />
+            10 * 10 = 100
+          </div>
+        </li>
+        <li>
+          <code>log()</code> the following pattern using a <code>loop</code>:
+          <div class="examples">
+            <div class="patterns">
+              <p class="pattern">i&nbsp;&nbsp;i^2&nbsp;&nbsp;i^3</p>
+              <p class="pattern">
+                0&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;0
+              </p>
+              <p class="pattern">
+                1&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;1
+              </p>
+              <p class="pattern">
+                2&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;8
+              </p>
+              <p class="pattern">
+                3&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;27
+              </p>
+              <p class="pattern">4&nbsp;&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;64</p>
+              <p class="pattern">5&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;125</p>
+              <p class="pattern">6&nbsp;&nbsp;&nbsp;36&nbsp;&nbsp;&nbsp;216</p>
+              <p class="pattern">7&nbsp;&nbsp;&nbsp;49&nbsp;&nbsp;&nbsp;343</p>
+              <p class="pattern">8&nbsp;&nbsp;&nbsp;64&nbsp;&nbsp;&nbsp;512</p>
+              <p class="pattern">9&nbsp;&nbsp;&nbsp;81&nbsp;&nbsp;&nbsp;729</p>
+              <p class="pattern">10&nbsp;&nbsp;100&nbsp;&nbsp;1000</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          Iterate from 0 to 100 with a <code>for Loop</code> and
+          <code>log()</code> only the even numbers.
+        </li>
+        <li>
+          Iterate from 0 to 100 with a <code>for Loop</code> and
+          <code>log()</code> on the odd numbers.
+        </li>
+        <li>
+          Iterate from 0 to 100 with a <code>for Loop</code> and
+          <code>log()</code> only the prime numbers.
+        </li>
+        <li>
+          Iterate from 0 to 100 with a <code>for Loop</code> and add all the
+          numbers. (ans. 5050)
+        </li>
+        <li>
+          Iterate from 0 to 100 with a <code>for Loop</code> and
+          <code>log()</code> the sum of the <strong>even</strong> and the sum of
+          all the <strong>odd</strong> numbers.
+          <ul>
+            <li class="inner-list">Create an array from the results.</li>
+          </ul>
+        </li>
+        <li>Create a script that generates 5 random numbers.</li>
+        <li>
+          Create a script which generates 5 random numbers, the numbers should
+          be unique.
+        </li>
+        <li>
+          Create a small script which generates a random id with six characters.
+          <div class="examples">Example: 5j2khz</div>
+        </li>
+      </ol>
+      <h3 class="leveltitle">Level 2</h3>
+      <ol class="qlv2">
+        <li>
+          Create a script which generates an id of however many characters.
+          <div class="examples">
+            <p>Ex1: fe3jo1gl124g</p>
+            <p>Ex2: xkqci4utda1lmbelpkm03rba</p>
+          </div>
+        </li>
+        <li>
+          Create a script that generates random hexadecimal number
+          <div class="examples">
+            <p>Example: #ee33df</p>
+          </div>
+        </li>
+        <li>
+          Create a script that generates random <strong>rgb</strong> color
+          numbers.
+          <div class="examples">Example: rgb(134, 163, 242)</div>
+        </li>
+        <li>
+          Create an array of the lengths of the country names in the countries
+          array.
+          <div class="examples">[7, 7, 6, 7, 8, 7, 7, 7, 7, 5, 5]</div>
+        </li>
+        <li>
+          Create the following array of arrays using the countries array
+          <div class="examples">
+            [ <br />['Albania', 'ALB', 7],<br />
+            ['Bolivia', 'BOL', 7],<br />
+            ['Canada', 'CAN', 6],<br />
+            ['Denmark', 'DEN', 7],<br />
+            ['Ethiopia', 'ETH', 8],<br />
+            ['Finland', 'FIN', 7],<br />
+            ['Germany', 'GER', 7],<br />
+            ['Hungary', 'HUN', 7],<br />
+            ['Ireland', 'IRE', 7],<br />
+            ['Iceland', 'ICE', 7],<br />
+            ['Japan', 'JAP', 5],<br />
+            ['Kenya', 'KEN', 5] <br />
+            ]
+          </div>
+        </li>
+        <li>
+          Using the countries array, <code>log("")</code> all the countries with
+          the word <strong>"land"</strong>
+          in their names to the console. If there are none then
+          <code>log("No country contains the word land")</code>
+          <p class="examples">['Finland','Ireland', 'Iceland']</p>
+        </li>
+        <li>
+          Using the countries array, <code>log("")</code> all the countries with
+          the string <strong>"ia"</strong> in their names to the console. If
+          there are none then
+          <code>log("No country contains the word land")</code>
+          <p class="examples">['Albania', 'Bolivia','Ethiopia']</p>
+        </li>
+        <li>
+          Find the country with the longest name.
+          <p class="examples">Ethiopia</p>
+        </li>
+        <li>
+          Find the country(s) with only 5 characters in their name.
+          <p class="examples">['Japan', 'Kenya']</p>
+        </li>
+        <li>
+          Find the longest word in the webTechs array.
+          <div class="examples">
+            [<br />
+            ["HTML", 4],<br />
+            ["CSS", 3],<br />
+            ["JavaScript", 10],<br />
+            ["React", 5],<br />
+            ["Redux", 5],<br />
+            ["Node", 4],<br />
+            ["MongoDB", 7]<br />
+            ]
+          </div>
+        </li>
+        <li>
+          Using MongoDB, Express, React and Node together is called a MERN stack
+          . Create an array of the acronym MERN.
+        </li>
+        <li>
+          Iterate through the webTechs array using a <code>for()</code> or a
+          <code>for Of()</code> loop and <code>log()</code> the items.
+        </li>
+        <li>
+          Reverse the order of the provided array without using the
+          <code>reverse()</code> method
+          <p class="examples">['banana', 'orange', 'mango', 'lemon']</p>
+        </li>
+        <li>
+          <code>log()</code> all the contents of the webTechs array without
+          putting them in an array.
+          <p class="examples">
+            HTML <br />
+            CSS <br />
+            JS <br />
+            REACT <br />
+            NODE <br />
+            EXPRESS <br />
+            MONGODB
+          </p>
+        </li>
+      </ol>
+      <h3 class="leveltitle">Level 3</h3>
+      <ol class="qlv3">
+        <li>
+          Using the countries2 array:
+          <ul class="inner-list">
+            <li>Copy the array without mutating it.</li>
+            <li>
+              Sort the copy and store it in an array called sortedCountries.
+            </li>
+          </ul>
+        </li>
+        <li>sort the webTechs array and mernStack array.</li>
+        <li>
+          put all the countries from the countries2 array with the word
+          <strong>"land"</strong> in their name(s) in a new array.
+        </li>
+        <li>
+          Find the country(s) with the longest name in the countries2 array.
+        </li>
+        <li>
+          Put all the countries with just four letters in their name(s) in their
+          own array.
+        </li>
+        <li>
+          Put all the countries with two or more words in their name(s) in their
+          own array.
+        </li>
+        <li>
+          Create a new array with all the countries in the countries2 array in
+          reverse order and capitalize the country names.
+        </li>
+      </ol>
+    </main>
+    <div class="padding"></div>
+    <footer>&copy;2025 codingMiles, original repo by Asabeneh</footer>
+  </body>
+</html>
