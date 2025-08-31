@@ -212,11 +212,13 @@ console.log(itCompanies4);
 //              A countries.js file to store the countries array.
 //              A web_techs.js file to store the webTechs array.
 //              Access both files in the main script file.
+console.log("=======================Level 2=====================");
+console.log(countries1);
+console.log(webTechs1);
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxx   Question(2)    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // "I love teaching and empowering people. I teach HTML, CSS, JS, React, Python."
 //              Create an array of all the words in the sentence without the punctuation.
-console.log("----------Answers continue here-------------------------");
 const newString =
   "I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.";
 const splitNew = newString.split(" ");
@@ -291,6 +293,7 @@ console.log(concatenatedMethod2);
 //....................................Level 3..................................
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxx  Question(1)    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+console.log("===========Level 3=========================");
 // Complete the following exercises using this array:
 const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
 //                      Sort the array
@@ -373,6 +376,3 @@ const arr1 = countries.slice(0, 6);
 const arr2 = countries.slice(6, 12);
 console.log(arr1);
 console.log(arr2);
-console.log(
-  "-----------Everything below here is for Level 2 question 1---------"
-);

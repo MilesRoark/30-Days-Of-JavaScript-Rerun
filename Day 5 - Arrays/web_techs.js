@@ -7,4 +7,3 @@ const webTechs1 = [
   "Node",
   "MongoDB",
 ];
-console.log(webTechs1);

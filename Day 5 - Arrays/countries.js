@@ -11,4 +11,3 @@ const countries1 = [
   "Japan",
   "Kenya",
 ];
-console.log(countries1);
