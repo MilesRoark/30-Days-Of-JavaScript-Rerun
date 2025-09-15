@@ -381,12 +381,31 @@ if (iaCountries.length > 0) {
 
 //########################  Question 8 ############################
 // Find the country with the longest name.
-//                  Answer:Ethiopia
-let nameLengths = [];
+//                  Answer:'Central African Republic', 'East Timor (Timor Timur)'
+const maxCharArr = [];
+for (let country of countries) {
+  maxCharArr.push(country.length);
+}
+console.log(maxCharArr.sort((a, b) => b - a));
 
+let maxValue = Math.max(...maxCharArr);
+let longestNamedCountry = [];
+for (let country of countries) {
+  if (country.length === maxValue) {
+    longestNamedCountry.push(country);
+  }
+}
+console.log(longestNamedCountry);
 //########################  Question 9 ############################
 // Find the country(s) with only 5 characters in their name.
-//                  Answer:['Japan', 'Kenya']
+//                  Answer:['Japan', 'Kenya']{
+let fiveChars = [];
+for (let country of countries) {
+  if (country.length === 5) {
+    fiveChars.push(country);
+  }
+}
+console.log(fiveChars);
 
 //########################  Question 10 ############################
 // Find the longest word in the webTechs array.
@@ -399,17 +418,59 @@ let nameLengths = [];
 //                ["Node", 4],
 //                ["MongoDB", 7]
 //              ]
+const webTechs = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+];
 
+let techLengths = [];
+for (let tech of webTechs) {
+  techLengths.push(tech.length);
+}
+console.log(techLengths);
+let maxVal = Math.max(...techLengths);
+console.log(maxVal);
+let mostChar = [];
+for (let tech of webTechs) {
+  if (tech.length === maxVal) {
+    mostChar.push(`${tech}, ${tech.length}`);
+  }
+}
+console.log(mostChar);
 //########################  Question 11 ############################
 // Using MongoDB, Express, React and Node together is called a MERN stack . Create an array of the acronym MERN.
+const mernStack = ["MongoDB", "Express", "React", "Node"];
+let letterArr = [];
+for (let tech of mernStack) {
+  letterArr.push(tech[0]);
+}
+console.log(letterArr.join(""));
 
 //########################  Question 12 ############################
 // Iterate through the webTechs array using a for() or a for Of() loop and log() the items.
+//for method
+for (let i = 0; i < webTechs.length; i++) {
+  console.log(webTechs[i]);
+}
+
+//for... of method
+for (let tech of webTechs) {
+  console.log(tech);
+}
 
 //########################  Question 13 ############################
 // Reverse the order of the provided array without using the reverse() method
-//          ['banana', 'orange', 'mango', 'lemon']
-
+const fruityArr = ["banana", "orange", "mango", "lemon"];
+const reversedFruityArr = [];
+for (let i = fruityArr.length - 1; i >= 0; i--) {
+  reversedFruityArr.push(fruityArr[i]);
+}
+console.log(reversedFruityArr);
 //########################  Question 14 ############################
 // log() all the contents of the webTechs array without putting them in an array.
 //          HTML
@@ -419,27 +480,73 @@ let nameLengths = [];
 //          NODE
 //          EXPRESS
 //          MONGODB
+console.log(webTechs.join(","));
 
 //======================== Level 3 ==============================
 //########################  Question 1 ############################
-// Using the countries2 array:
+// Using the countries array:
 //          Copy the array without mutating it.
+const newCountriesArr = [...countries2];
 //          Sort the copy and store it in an array called sortedCountries.
+const sortedCountries = newCountriesArr.sort();
+console.log(newCountriesArr);
+console.log(sortedCountries);
 
 //########################  Question 2 ############################
 // sort the webTechs array and mernStack array.
+console.log(webTechs.sort());
+console.log(mernStack.sort());
 
 //########################  Question 3 ############################
 // put all the countries from the countries2 array with the word "land" in their name(s) in a new array.
+let containsLand = [];
+for (let country of newCountriesArr) {
+  if (country.includes("land")) {
+    containsLand.push(country);
+  }
+}
+console.log(containsLand);
 
 //########################  Question 4 ############################
 // Find the country(s) with the longest name in the countries2 array.
-
+let countCharArr = [];
+for (let country of newCountriesArr) {
+  countCharArr.push(country.length);
+}
+console.log(countCharArr);
+let longestNamed = Math.max(...countCharArr);
+let longestIn = [];
+for (let country of newCountriesArr) {
+  if (country.length === longestNamed) {
+    longestIn.push(country);
+  }
+}
+console.log(longestIn);
 //########################  Question 5 ############################
 // Put all the countries with just four letters in their name(s) in their own array.
+let fourChar = [];
+for (let country of newCountriesArr) {
+  if (country.length === 4) {
+    fourChar.push(country);
+  }
+}
+console.log(fourChar);
 
 //########################  Question 6 ############################
 // Put all the countries with two or more words in their name(s) in their own array.
-
+const twoWorded = [];
+for (let country of newCountriesArr) {
+  let lengthSearch = country.split(" ");
+  if (lengthSearch.length >= 2) {
+    twoWorded.push(country);
+  }
+}
+console.log(twoWorded);
 //########################  Question 7 ############################
 // Create a new array with all the countries in the countries2 array in reverse order and capitalize the country names.
+let capitalizedArr = [];
+for (let country of newCountriesArr) {
+  let capt = country.toUpperCase();
+  capitalizedArr.push(capt);
+}
+console.log(capitalizedArr.reverse());
