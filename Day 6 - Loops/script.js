@@ -259,26 +259,70 @@ console.log(newId2.join(""));
 // Create a script which generates an id of however many characters.
 //              Ex1: fe3jo1gl124g
 //              Ex2: xkqci4utda1lmbelpkm03rba
-const charArr2 = ["f", "e", 3, "j", "o", 9, "g", "l", 1, 2, 4, "g", 0];
+const charArr2 = ["f", "e", 3, "j", "o", 9, "g", "l", 1, 2, 4, "a", 0];
 let xCharArr = [];
 while (xCharArr.length < 19) {
   let randomIndex = Math.floor(Math.random() * charArr2.length);
-  if (!xCharArr.includes(charArr2[randomIndex])) {
-    xCharArr.push(charArr2[randomIndex]);
-  }
+  xCharArr.push(charArr2[randomIndex]);
 }
 console.log(xCharArr.join(""));
+
 //########################  Question 2 ############################
 // Create a script that generates random hexadecimal number
 //              Example: #ee33df
-
+const hexCharArr = [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  "a",
+  "A",
+  "b",
+  "B",
+  "c",
+  "C",
+  "d",
+  "D",
+  "e",
+  "E",
+  "f",
+  "F",
+];
+const hexValArr = [];
+while (hexValArr.length < 6) {
+  let randomIndex = Math.floor(Math.random() * hexCharArr.length);
+  hexValArr.push(hexCharArr[randomIndex]);
+}
+console.log(`#${hexValArr.join("")}`);
+// #C139d1
 //########################  Question 3 ############################
 // Create a script that generates random rgb color numbers.
 //              Example: rgb(134, 163, 242)
+let rgbColorsArr = [];
+while (rgbColorsArr.length < 3) {
+  let randomNum = Math.floor(Math.random() * 256);
+  if (!rgbColorsArr.includes(randomNum)) {
+    rgbColorsArr.push(randomNum);
+  }
+}
+console.log(`rgb(${rgbColorsArr.join(",")})`);
+// rgb(82,1,59)
 
 //########################  Question 4 ############################
 // Create an array of the lengths of the country names in the countries array.
 //              Example:[7, 7, 6, 7, 8, 7, 7, 7, 7, 5, 5]
+console.log(countries);
+const nameLength = [];
+for (let country of countries) {
+  nameLength.push(country.length);
+}
+console.log(nameLength);
 
 //########################  Question 5 ############################
 // Create the following array of arrays using the countries array
@@ -296,18 +340,49 @@ console.log(xCharArr.join(""));
 //                ['Japan', 'JAP', 5],
 //                ['Kenya', 'KEN', 5]
 //              ]
+let infoArr = [];
+for (let country of countries) {
+  let abb = country.slice(0, 3);
+  let nameLength = country.length;
+  infoArr.push(`[${country}, ${abb}, ${nameLength}]`);
+}
+console.log(infoArr);
 
 //########################  Question 6 ############################
-// Using the countries array, log("") all the countries with the word "land" in their names to the console. If there are none then log("No country contains the word land")
+// Using the countries array, log all the countries with the word "land" in their names to the console. If there are none then log("No country contains the word land")
 //              Example:['Finland','Ireland', 'Iceland']
-
+// const countries2 = ["Nigeria", "United States", "Somalia", "Uganda"];
+const includesLand = [];
+for (let country of countries) {
+  if (country.includes("land")) {
+    includesLand.push(country);
+  }
+}
+if (includesLand.length > 0) {
+  console.log(includesLand);
+} else {
+  console.log("No country contains the word land.");
+}
 //########################  Question 7 ############################
-// Using the countries array, log("") all the countries with the string "ia" in their names to the console. If there are none then log("No country contains the word land")
+// Using the countries array, log all the countries with the string "ia" in their names to the console. If there are none then log("No country contains the character ia.")
 //              Example:['Albania', 'Bolivia','Ethiopia']
+// const countries3 = ["Ghana", "United States", "Brazil", "Uganda"];
+const iaCountries = [];
+for (let country of countries) {
+  if (country.includes("ia")) {
+    iaCountries.push(country);
+  }
+}
+if (iaCountries.length > 0) {
+  console.log(iaCountries);
+} else {
+  console.log("No country contains the characters ia.");
+}
 
 //########################  Question 8 ############################
 // Find the country with the longest name.
 //                  Answer:Ethiopia
+let nameLengths = [];
 
 //########################  Question 9 ############################
 // Find the country(s) with only 5 characters in their name.
