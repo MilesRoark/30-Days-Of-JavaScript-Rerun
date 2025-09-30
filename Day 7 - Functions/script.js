@@ -1,39 +1,92 @@
 //*************************LEVEL 1******************************
 //#########################QUESTION 1###########################
 // Declare a function fullName that prints out your full name.
-
+function fullName(name) {
+  return name;
+}
+console.log(fullName("Miles Roark"));
 //#########################QUESTION 2###########################
 // Add a firstName and a lastName parameter to the previous function.
-
+function firstAndLast(first, last) {
+  return `My name is ${first} ${last}`;
+}
+console.log(firstAndLast("Jane", "Bond"));
 //#########################QUESTION 3###########################
 // Declare a function called addNumbers that takes two parameters and returns the sum.
-
+function addNumbers(a, b) {
+  return a + b;
+}
+console.log(addNumbers(42, 12));
 //#########################QUESTION 4###########################
 // area = length * width. Write an areaOfRectangle function.
+function areaOfRectangle(length, width) {
+  let area = length * width;
+  return `${area} m\u00B2`;
+}
+console.log(areaOfRectangle(10, 2));
 
 //#########################QUESTION 5###########################
 // perimeter = 2 * [length + width]. Write a perimeterOfRectangle function.
+function perimeter(length, width) {
+  let perimeter = 2 * (length + width);
+  return `${perimeter} m`;
+}
+console.log(perimeter(10, 2));
 
 //#########################QUESTION 6###########################
 // volume = length * width * height. write a volumeOfRectPrism function.
+function volume(length, width, height) {
+  let volume = length * width * height;
+  return `${volume} m\u00B3`;
+}
+console.log(volume(10, 2, 5));
 
 //#########################QUESTION 7###########################
 // area[circle] = pi * r * r. write an areaOfCircle function.
+function areaOfACircle(radius) {
+  let area = Math.round(Math.PI * Math.pow(radius, 2));
+  return `${area} m\u00B2`;
+}
+console.log(areaOfACircle(2));
 
 //#########################QUESTION 8###########################
 // circumference = 2 * pi * r. write a circumOfCircle function.
+function circumference(radius) {
+  let circumference = Math.round(2 * Math.PI * radius);
+  return `${circumference} m`;
+}
+console.log(circumference(4));
 
 //#########################QUESTION 9###########################
-// density = mass / volume. write a function that calculates density.
+// density = mass / volume. write a function that calculates density.{
+function density(mass, volume) {
+  let density = Math.round(mass / volume);
+  return `${density} kg/m\u00B3`;
+}
+console.log(density(10, 6));
 
 //#########################QUESTION 10###########################
 // speed = distance / time. write a function that calculates speed.
+function speed(distance, time) {
+  let speed = distance / time;
+  return `${speed}km/hr`;
+}
+console.log(speed(10, 2));
 
 //#########################QUESTION 11###########################
 // weight = mass * gravity. write a function that calculates weight.
-
+function weight(mass, gravity = 9.8) {
+  let weight = mass * gravity;
+  return `${weight} kg`;
+}
+console.log(weight(120));
 //#########################QUESTION 12###########################
-// farenheit = [oC * 9/5] + 32. write a celciusToFarenheit converter function.
+// fahrenheit = [oC * 9/5] + 32. write a celciusToFarenheit converter function.
+function celciusToFahrenheit(temp) {
+  let farenheit = (temp * 9) / 5 + 32;
+  return `${farenheit} deg fahrenheit`;
+}
+console.log(celciusToFahrenheit(30));
 
 //#########################QUESTION 13###########################
 // BMI = (weight in pounds / [height in inches]²) x 703. Write a weightGroup function that uses your BMI to determine your weight group.
@@ -41,19 +94,72 @@
 // 18.5 to 24.9 BMI = Normal
 // 25 to 29.9 BMI = Overweight
 // 30 or higher BMI = Obese
+function weightGroup(weight, height) {
+  let BMI = (weight / Math.pow(height, 2)) * 703;
+  if (BMI < 18.5) {
+    return `Your BMI is ${BMI}, that makes you underweigth`;
+  } else if (BMI >= 18.6 && BMI <= 24.9) {
+    return `Your BMI is ${BMI}, your weight is okay.`;
+  } else if (BMI >= 25 && BMI <= 29.9) {
+    return `Your BMI is ${BMI}, that makes you overweight`;
+  } else {
+    return `Your BMI is ${BMI}, that makes you obese`;
+  }
+}
+console.log(weightGroup(180, 68));
 
 //#########################QUESTION 14###########################
 // write a checkSeason function. It takes month as the parameter and returns the corresponding season.
+function checkSeason(month) {
+  const winterMonths = ["December", "January", "February", "March"];
+  const springMonths = ["April", "May", "June"];
+  const summerMonths = ["July", "August", "September"];
+  const fallMonths = ["October", "November"];
+
+  if (winterMonths.includes(month)) {
+    return "It's winter, don't forget your jacket.";
+  } else if (springMonths.includes(month)) {
+    return "It's Spring, touch some grass.";
+  } else if (summerMonths.includes(month)) {
+    return "It's Summer, find a beach.";
+  } else {
+    return "It's fall, check out the scenery.";
+  }
+}
+console.log(checkSeason("August"));
 
 //#########################QUESTION 15###########################
 // Write a function findMax. It takes three arguments and finds the max value. Don't use Math.max.
+function findMax(a, b, c) {
+  if (a === b && a === c) {
+    return "These are of equal value.";
+  } else if (a > b && a > c) {
+    return "a is the max value";
+  } else if (b > a && b > c) {
+    return "b is the max value";
+  } else {
+    return "c is the max value";
+  }
+}
+console.log(findMax(30, 10, 10));
 
 //********************************LEVEL 2*******************
 //#########################QUESTION 1###########################
-// ax + by + c = 0. Using this formula write a solveLinEquationfunction.
+// ax + by + c = 0. Using this formula write a solveLinEquation function.
+function solveLinEquation(a, b, c) {
+  if (b === 0) {
+    return "unsolvable please input actual values.";
+  }
 
+  let slope = -a / b;
+  let intercept = -c / b;
+
+  return `y = ${slope}x + ${intercept}`;
+}
+console.log(solveLinEquation(10, 3, 8));
 //#########################QUESTION 2###########################
 // ax^2 + bx + c = 0. Using this formula write a solveQuadEquation function.
+//  formula: x = (-b +- ​​Math.sqrt(Math.pow(b, 2) - 4ac))/ 2a
 
 //#########################QUESTION 3###########################
 // Declare a printArray function. It takes an array as it's parameter and prints out the values of the array.
