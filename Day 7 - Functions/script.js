@@ -160,46 +160,168 @@ console.log(solveLinEquation(10, 3, 8));
 //#########################QUESTION 2###########################
 // ax^2 + bx + c = 0. Using this formula write a solveQuadEquation function.
 //  formula: x = (-b +- ​​Math.sqrt(Math.pow(b, 2) - 4ac))/ 2a
+function solveQuadEquation(a, b, c) {
+  let discriminant = Math.pow(b, 2) - 4 * a * c;
+  if (discriminant < 0) {
+    return "no real roots.";
+  }
 
+  let squareOfDiscriminant = Math.sqrt(discriminant);
+  let root1 = ((-b + squareOfDiscriminant) / 2) * a;
+  let root2 = ((-b - squareOfDiscriminant) / 2) * a;
+
+  return `{${root1}, ${root2}}`;
+}
+console.log(solveQuadEquation(1, 4, 4));
+console.log(solveQuadEquation(2, 5, 3));
 //#########################QUESTION 3###########################
 // Declare a printArray function. It takes an array as it's parameter and prints out the values of the array.
+function printArray(arr) {
+  return arr;
+}
+console.log(printArray([1, 2, 4, 6, 5]));
 
 //#########################QUESTION 4###########################
 // write a showDateTime function using the Date object. 09/26/ 2025 04:50.
+function showDateTime() {
+  const today = new Date();
 
+  let month = String(today.getMonth() + 1).padStart(2, 0);
+  let day = String(today.getDate()).padStart(2, 0);
+  let year = today.getFullYear();
+  let hour = String(today.getHours()).padStart(2, 0);
+  let minutes = String(today.getMinutes()).padStart(2, 0);
+
+  return `${month}/${day}/${year}/${hour}/${minutes}`;
+}
+console.log(showDateTime());
 //#########################QUESTION 5###########################
 // Swap x and y using a swapValues function.
 // (43,53) // x => 43, y => 53
+function swapValues(x, y) {
+  return [y, x];
+}
+console.log(swapValues(43, 53));
 
 //#########################QUESTION 6###########################
 // Declare a reverseArray function. It takes an array as a parameter and returns the array reversed. Don't use the reverse method.
-
+function reverseArray(arr) {
+  let reversed = [];
+  for (i = arr.length - 1; i >= 0; i--) {
+    reversed.push(arr[i]);
+  }
+  return reversed;
+}
+console.log(reverseArray(["pencil", "pen", 1, 53, null, "house"]));
 //#########################QUESTION 7###########################
 // write a capitalizeArray function.
-
+function capitalizeArray(arr) {
+  let capitalized = [];
+  for (let item of arr) {
+    if (typeof item === "string") {
+      capitalized.push(item.toUpperCase());
+    }
+  }
+  return capitalized;
+}
+console.log(capitalizeArray(["pencil", "pen", 1, 53, null, "house"]));
 //#########################QUESTION 8###########################
 // Declare a function addItem that takes an item as a parameter and returns it as an array.
-
+let itemArr = [];
+function addItem(item) {
+  itemArr.push(item);
+  return itemArr;
+}
+console.log(addItem("pink"));
+console.log(addItem("cow"));
+console.log(addItem(2));
 //#########################QUESTION 9###########################
 // Declare a removeItem function. It takes index as a parameter and removes the item at the index from the array.
-
+let testArr = ["axe", "staff", 1, 49, "armour"];
+function removeItem(index) {
+  let newTestArr = testArr.splice(index, 1);
+  return testArr;
+}
+console.log(removeItem(3));
+console.log(removeItem(2));
 //#########################QUESTION 10###########################
 // Declare a sumOfNumbers function. It takes number as a parameter and adds all the numbers in that range.
+function sumOfNumbers(num) {
+  let sum = 0;
+  for (let i = 0; i <= num; i++) {
+    sum += i;
+  }
+  return sum;
+}
+console.log(sumOfNumbers(10));
+console.log(sumOfNumbers(2));
 
 //#########################QUESTION 11###########################
 // Declare a sumOfOdds function. It takes number as a parameter and adds all the odd numbers in that range.
-
+function sumOfOdds(num) {
+  let sum = 0;
+  for (let i = 0; i <= num; i++) {
+    if (i % 2 !== 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+console.log(sumOfOdds(10));
 //#########################QUESTION 12###########################
 // Declare a sumOfEvens function. It takes number as a parameter and adds all the even numbers in that range.
+function sumOfEvens(num) {
+  sum = 0;
+  for (let i = 0; i <= num; i++) {
+    if (i % 2 === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+console.log(sumOfEvens(10));
 
 //#########################QUESTION 13###########################
 // Declare an evenAndOdds function. It takes a positive Integer as a parameter and returns the number of evens and odds in that range.
-
+function evensAndOdds(number) {
+  if (number < 0) {
+    return "positive integers only.";
+  }
+  let evens = [];
+  let odds = [];
+  for (let i = 0; i <= number; i++) {
+    if (i % 2 === 0) {
+      evens.push(i);
+    } else {
+      odds.push(i);
+    }
+  }
+  return `There are ${evens.length} even numbers and ${odds.length} odd numbers in that range.`;
+}
+console.log(evensAndOdds(10));
+console.log(evensAndOdds(25));
 //#########################QUESTION 14###########################
 // Write a function that takes any number of arguments and returns the sum of the arguments.
+function multipleArgs() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+console.log(multipleArgs(1, 2, 3, 4, 5));
 
 //#########################QUESTION 15###########################
 // Write a randomUserIpGenerator function.
+let ipArr = [];
+function randomUserIpGen() {
+  for (let i = 0; i < 4; i++) {
+    let randomNumber = Math.floor(Math.random() * 255);
+    ipArr.push(randomNumber);
+  }
+  return ipArr.join(".");
+}
+console.log(randomUserIpGen());
 
 //#########################QUESTION 16###########################
 // Write a randomMacAddressGenerator function.
