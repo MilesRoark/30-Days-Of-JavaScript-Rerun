@@ -325,44 +325,286 @@ console.log(randomUserIpGen());
 
 //#########################QUESTION 16###########################
 // Write a randomMacAddressGenerator function.
+const useableChars = [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+];
+const macAddArr = [];
+function randomMacAddressGenerator() {
+  for (let i = 0; i < 6; i++) {
+    let randomIndex1 = Math.floor(Math.random() * useableChars.length);
+    let randomIndex2 = Math.floor(Math.random() * useableChars.length);
+    macAddArr.push(
+      `${useableChars[randomIndex1]}${useableChars[randomIndex2]}`
+    );
+  }
+  return macAddArr.join(":");
+}
+
+console.log(randomMacAddressGenerator());
 
 //#########################QUESTION 17###########################
 // Write a randomHexNumberGenerator function.
+const hexCharsArr = [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+];
+const randomHexArr = [];
+function randomHexNumberGenerator() {
+  for (let i = 0; i < 6; i++) {
+    let randomIndex = Math.floor(Math.random() * hexCharsArr.length);
+
+    randomHexArr.push(hexCharsArr[randomIndex]);
+  }
+  return `#${randomHexArr.join("")}`;
+}
+console.log(randomHexNumberGenerator());
 
 //#########################QUESTION 18###########################
 // Write a userIdGenerator function. The id should be seven characters long.
+const possibleIdChars = ["a", "c", "e", "x", "m", "q", 0, 1, 2, 3, 4, 5];
+const userId = [];
+function userIdGenerator() {
+  for (let i = 0; i < 7; i++) {
+    let randomIndex = Math.floor(Math.random() * possibleIdChars.length);
 
+    userId.push(possibleIdChars[randomIndex]);
+  }
+  return `User:${userId.join("")}`;
+}
+console.log(userIdGenerator());
 //******************************LEVEL 3*************************
 //#########################QUESTION 1###########################
 // write a userIdGeneratedByUser function. Using prompt() get the number of characters and the number of id's to be generated.
+// const charsForId = ["a", "A", "b", "B", "c", "C", "1", "2", "3", "4", "5", "6"];
+// function userIdGeneratedByUser() {
+//   let length = prompt("Please enter the length of the ids");
+//   let amount = prompt("Please enter the number of ids to generate.");
+//   let lengthCheck = Number(length);
+//   let amountCheck = Number(amount);
+//   if (!lengthCheck || !amountCheck || lengthCheck <= 0 || amountCheck <= 0) {
+//     alert("Please enter a valid number for amount and length");
+//     return [];
+//   }
+
+//   let userIds = [];
+//   for (let i = 0; i < amountCheck; i++) {
+//     let generatedIds = [];
+//     for (let j = 0; j < lengthCheck; j++) {
+//       let randomIndex = Math.floor(Math.random() * charsForId.length);
+//       generatedIds.push(charsForId[randomIndex]);
+//     }
+//     userIds.push(generatedIds.join(""));
+//   }
+//   return userIds;
+// }
+// console.log(userIdGeneratedByUser());
 
 //#########################QUESTION 2###########################
 // Write an rgbColorGenerator function.
+function rgbColorGenerator() {
+  let rgbArr = [];
+  for (let i = 0; i < 3; i++) {
+    let randomNumbers = Math.floor(Math.random() * 255);
+    rgbArr.push(randomNumbers);
+  }
+  return `rgb(${rgbArr.join(",")})`;
+}
+console.log(rgbColorGenerator());
 
 //#########################QUESTION 3###########################
 // Write an arrayOfHexaColors function that return an array of hexadecimal colors.
-
+const hexCharsArr2 = [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+];
+function arrayOfHexaColors(amount) {
+  let hexaArr = [];
+  for (let i = 0; i < amount; i++) {
+    let hexVals = [];
+    for (let j = 0; j < 6; j++) {
+      let randomIndex = Math.floor(Math.random() * hexCharsArr2.length);
+      hexVals.push(hexCharsArr2[randomIndex]);
+    }
+    hexaArr.push(`#${hexVals.join("")}`);
+  }
+  return hexaArr;
+}
+console.log(arrayOfHexaColors(4));
 //#########################QUESTION 4###########################
 // Write an arrOfRgbColors function which returns an array of rgb colors.
-
+function arrOfRgbColors(amount) {
+  let rgbArr = [];
+  for (let i = 0; i < amount; i++) {
+    let numberStore = [];
+    for (let j = 0; j < 3; j++) {
+      let randomNumber = Math.floor(Math.random() * 256);
+      numberStore.push(randomNumber);
+    }
+    rgbArr.push(`rgb(${numberStore})`);
+  }
+  return rgbArr;
+}
+console.log(arrOfRgbColors(2));
 //#########################QUESTION 5###########################
 // Write a convertHexaToRgb function.
+function convertHexaToRgb(value) {
+  let cleanedVal = value.replace("#", "");
+
+  let red = parseInt(cleanedVal.substring(0, 2), 16);
+  let green = parseInt(cleanedVal.substring(2, 4), 16);
+  let blue = parseInt(cleanedVal.substring(4, 6), 16);
+
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+console.log(convertHexaToRgb("#4d23fe"));
 
 //#########################QUESTION 6###########################
 // Write a convertRgbToHexa function.
-
+function convertRgbToHexa(r, g, b) {
+  let redHex = r.toString(16);
+  let greenHex = g.toString(16);
+  let blueHex = b.toString(16);
+  return `#${redHex}${greenHex}${blueHex}`;
+}
+console.log(convertRgbToHexa(122, 43, 75));
 //#########################QUESTION 7###########################
 // Write a generateColors functions which generates any number of Hexadecimal or rgb colors.
+const hexCharsArr3 = [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+];
+function generateColors(type, amount) {
+  if (amount <= 0 || !Number.isInteger(amount)) {
+    return "Please enter whole numbers for the amount.";
+  }
 
+  type = type.toLowerCase();
+
+  let colorArr = [];
+  for (let i = 0; i < amount; i++) {
+    if (type === "hexa") {
+      let hexArr = [];
+      for (let j = 0; j < 6; j++) {
+        let randomIndex = Math.floor(Math.random() * hexCharsArr3.length);
+        hexArr.push(hexCharsArr3[randomIndex]);
+      }
+      colorArr.push(`#${hexArr.join("")}`);
+    }
+    if (type === "rgb") {
+      let r = Math.floor(Math.random() * 256);
+      let g = Math.floor(Math.random() * 256);
+      let b = Math.floor(Math.random() * 256);
+      colorArr.push(`rgb(${r}, ${g}, ${b})`);
+    }
+  }
+  return colorArr;
+}
+console.log(generateColors("RGB", 3));
 //#########################QUESTION 8###########################
 // Write a shuffleArray function. That takes an array and shuffles it.
-
+function shuffleArray(arr) {
+  let shuffledArr = [...arr];
+  for (let i = shuffledArr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [shuffledArr[i], shuffledArr[j]] = [shuffledArr[j], shuffledArr[i]];
+  }
+  return shuffledArr;
+}
+console.log(shuffleArray([1, 3, 5, 6, 6, 7, 8]));
 //#########################QUESTION 9###########################
 // Write a factorial function. It takes a whole number as a parameter and returns it's factorial.
-
+function calcFactorial(num) {
+  let sum = 1;
+  for (let i = 2; i <= num; i++) {
+    sum *= i;
+  }
+  return sum;
+}
+console.log(calcFactorial(5));
 //#########################QUESTION 10###########################
 // Write an isEmpty function that checks if it's parameter is empty or not.
-
+function isEmpty(params) {
+  if (params == null) {
+    return true;
+  }
+  if (typeof params === "string") {
+    return params.trim().length === 0;
+  }
+  if (Array.isArray(params)) {
+    return params.length === 0;
+  }
+  return false;
+}
+console.log(isEmpty());
 //#########################QUESTION 11###########################
 // Write a sum function that returns the sum of it's parameters.
 
