@@ -607,30 +607,226 @@ function isEmpty(params) {
 console.log(isEmpty());
 //#########################QUESTION 11###########################
 // Write a sum function that returns the sum of it's parameters.
-
+function sumOfParams() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += Number(arguments[i]) || 0;
+  }
+  return sum;
+}
+console.log(sumOfParams("1", "2", 3, 4, "5"));
 //#########################QUESTION 12###########################
 // Write a sumOfArrayItems function that checks if all the contents of array are number types. If yes return the sum, else return "Not all items are numbers."
+function sumOfArrayItems(arr) {
+  if (!Array.isArray(arr)) {
+    return "Please use an array.";
+  }
+  let sum = 0;
+  for (let item of arr) {
+    if (typeof item !== "number") {
+      return "Not all items are numbers.";
+    } else {
+      sum += item;
+    }
+  }
+  return sum;
+}
 
+console.log(sumOfArrayItems([1, 2, "pencils", "cows", "5"]));
 //#########################QUESTION 13###########################
 // Write a average function that takes an array and finds the average of the items. Make sure to perform some type checking.
-
+function averageOfArr(arr) {
+  if (!Array.isArray(arr)) {
+    return "Please use an array.";
+  }
+  if (arr.length === 0) {
+    return "The array is empty.";
+  }
+  let sum = 0;
+  for (let item of arr) {
+    if (typeof item !== "number") {
+      return "Only numbers can be averaged.";
+    } else {
+      sum += item;
+    }
+  }
+  return sum / arr.length;
+}
+console.log(averageOfArr([1, 2, 3, 4, 5]));
 //#########################QUESTION 14###########################
 // Write a modifyArray function that takes an array as a parameter, removes the fifth item and returns the new array. If the length of the array is less than five it returns "Item not found".
-
+function modifyArray(arr) {
+  if (!Array.isArray(arr)) {
+    return "Please use an array.";
+  }
+  if (arr.length <= 0) {
+    return "The array is empty.";
+  }
+  if (arr.length < 5) {
+    return "Item not found.";
+  }
+  let copyArr = [...arr];
+  let modified = copyArr.splice(5, 1);
+  return copyArr;
+}
+console.log(modifyArray(["pens", "cows", 1, 3, 12, "tail", "trance"]));
 //#########################QUESTION 15###########################
 // Write an isPrime function which checks if a number is prime.
+function isPrime(num) {
+  if (typeof num !== "number" || !Number.isInteger(num) || num < 2) {
+    return false;
+  }
+  if (num === 2) {
+    return true;
+  }
+  if (num % 2 === 0) {
+    return false;
+  }
 
+  for (let i = 3; i <= Math.sqrt(num); i += 2) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(isPrime(13));
 //#########################QUESTION 16###########################
 // Write a function that checks if all the items in an array are unique.
-
+function uniqueCheck(arr) {
+  let duplicates = [];
+  let result;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
+      duplicates.push(arr[i]);
+    }
+  }
+  result = `Duplicates found: ${duplicates.length}, At: ${duplicates.join(
+    " , "
+  )}`;
+  return result;
+}
+console.log(uniqueCheck([1, 2, 2, "Pencil", "cows", 1, 4, 6, "cows"]));
 //#########################QUESTION 17###########################
 // Write a function that checks if all the items in an array are of the same data type.
-
+function DataTypeChecker(arr) {
+  let datatypeArr = [];
+  let result;
+  for (let item of arr) {
+    datatypeArr.push(typeof item);
+  }
+  let typeArr = new Set(datatypeArr);
+  console.log(typeArr);
+  if (typeArr.size > 1) {
+    result = "All items are not of the same type.";
+  } else {
+    result = "All items are of the same type.";
+  }
+  return result;
+}
+console.log(DataTypeChecker([1, 2, "Pencil", true, "cows"]));
 //#########################QUESTION 18###########################
 // Write an isValidVariable that checks if a variable is valid or not.
+function isValidVariable(value) {
+  const validVarRegex = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/;
+  const reservedWords = [
+    "break",
+    "case",
+    "catch",
+    "class",
+    "const",
+    "continue",
+    "debugger",
+    "default",
+    "delete",
+    "do",
+    "else",
+    "enum",
+    "export",
+    "extends",
+    "false",
+    "finally",
+    "for",
+    "function",
+    "if",
+    "implements",
+    "import",
+    "in",
+    "instanceof",
+    "interface",
+    "let",
+    "new",
+    "null",
+    "package",
+    "private",
+    "protected",
+    "public",
+    "return",
+    "static",
+    "super",
+    "switch",
+    "this",
+    "throw",
+    "true",
+    "try",
+    "typeof",
+    "var",
+    "void",
+    "while",
+    "with",
+    "yield",
+  ];
+  if (!validVarRegex.test(value)) {
+    return {
+      isValid: false,
+      reason: "Contains invalid characters.",
+    };
+  }
+
+  if (reservedWords.includes(value)) {
+    return {
+      isValid: false,
+      reason: "That's a reserved word.",
+    };
+  }
+  return { isValid: true, reason: "That is a valid variable." };
+}
+console.log(isValidVariable("DataTypeChecker"));
 
 //#########################QUESTION 19###########################
 // Write a function which returns an array of seven unique random numbers between 0 and 9.
-
+function uniqueNumGen(amount) {
+  if (amount > 10) {
+    return "Amount cannot be greater than 10.";
+  }
+  let uniqueNums = [];
+  for (let i = 0; i < amount; ) {
+    let randomNumber = Math.floor(Math.random() * 10);
+    if (!uniqueNums.includes(randomNumber)) {
+      uniqueNums.push(randomNumber);
+      i++;
+    }
+  }
+  return uniqueNums;
+}
+console.log(uniqueNumGen(7));
 //#########################QUESTION 20###########################
 // Write a reverseCountries function that copies the countries array and reverses the original.
+const newCountriesArr = [
+  "Nigeria",
+  "United States",
+  "China",
+  "India",
+  "Palestine",
+  "England",
+  "France",
+  "Mali",
+  "Gabon",
+];
+function reverseCountries(arr) {
+  let copiedArr = [...arr];
+  console.log(copiedArr);
+
+  return arr.reverse();
+}
+console.log(reverseCountries(newCountriesArr));
