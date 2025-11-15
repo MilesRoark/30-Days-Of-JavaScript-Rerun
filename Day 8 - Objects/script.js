@@ -1,24 +1,101 @@
 //*************************LEVEL 1******************************
 //#########################QUESTION 1###########################
 // Create a dog object
+const dog = {};
 //        Log the object to the console.
+console.log(dog);
 
 //#########################QUESTION 2###########################
 // Give the object a name,legs ,color ,age property and a bark method that returns woof woof.
+dog.name = "Jack";
+dog.legs = 4;
+dog.color = "brown";
+dog.age = 4;
+dog.bark = function () {
+  return "woof, woof";
+};
 //#########################QUESTION 3###########################
 // Log the values of the dog object.
+console.log(dog);
+console.log(dog.bark());
 //#########################QUESTION 4###########################
 // Give the dog object a breed property and a getDogInfo method.
+dog.breed = "Alsatian";
+dog.getDogInfo = function () {
+  return `Hi I'm ${dog.name}, I'm an ${dog.breed}, ${dog.color}, ${dog.age} years old and I have ${dog.legs} legs.`;
+};
+console.log(dog.getDogInfo());
 
 //********************************LEVEL 2*******************
 //#########################QUESTION 1###########################
 // Find the most skilled user in the users object.
+let mostSkilledUser = [];
+let maxSkill = -1;
+for (const user in users) {
+  let userSkills = users[user].skills.length;
+  if (userSkills > maxSkill) {
+    maxSkill = userSkills;
+    mostSkilledUser = [user];
+  } else if (userSkills === maxSkill) {
+    mostSkilledUser.push(user);
+  }
+}
+console.log(mostSkilledUser);
+
+for (let i = 0; i < users.length; i++) {
+  console.log(users[i].skills);
+}
+
 //#########################QUESTION 2###########################
 // Log all online users
+function isOnline(obj) {
+  if (!obj || typeof obj !== "object") {
+    return "Invalid input.";
+  }
+  let onlineUsers = [];
+  for (let user in obj) {
+    let isOn = obj[user].isLoggedIn;
+    if (isOn === true) {
+      onlineUsers.push(user);
+    }
+  }
+  return onlineUsers;
+}
+console.log(isOnline(users));
 //#########################QUESTION 3###########################
-// Log how many users have more that 50 points.
+// Log how many users have more than 50 points.
+function above50s(obj) {
+  let usersAbove = [];
+  for (let user in obj) {
+    let userPoints = obj[user].points;
+    if (userPoints > 50) {
+      usersAbove.push(user);
+    }
+  }
+
+  return usersAbove.length === 0
+    ? "There are no users with scores that high"
+    : usersAbove;
+}
+console.log(above50s(users));
 //#########################QUESTION 4###########################
 // Log all the MERN stack developers.
+function mernDevs(obj) {
+  let devsWithMern = [];
+  for (let dev in obj) {
+    let skills = obj[dev].skills;
+    if (
+      skills.includes("MongoDB") &&
+      skills.includes("Express") &&
+      skills.includes("React") &&
+      skills.includes("Node")
+    ) {
+      devsWithMern.push(dev);
+    }
+  }
+  return devsWithMern;
+}
+console.log(mernDevs(users));
 //#########################QUESTION 5###########################
 // Add your name as a property to the users object without modifying the original object.
 //#########################QUESTION 6###########################
