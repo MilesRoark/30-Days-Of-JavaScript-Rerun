@@ -98,17 +98,56 @@ function mernDevs(obj) {
 console.log(mernDevs(users));
 //#########################QUESTION 5###########################
 // Add your name as a property to the users object without modifying the original object.
+const unmodified = {
+  ...users,
+  miles: {
+    email: "miles@people.com",
+    skills: ["HTML", "CSS", "JavaScript"],
+    age: 42,
+    isLoggedOn: true,
+    points: 52,
+  },
+};
+console.log(unmodified);
+console.log(users);
+//using Object.assign:
+const unmodified2 = Object.assign({}, users, {
+  miles: {
+    email: "miles@exiledLands.com",
+    skills: ["HTML", "CSS", "JavaScript"],
+    age: 44,
+    isLoggedOn: false,
+    points: 74,
+  },
+});
+console.log(users);
+console.log(unmodified2);
 //#########################QUESTION 6###########################
 // Log all the keys of the users object.
+console.log(Object.keys(users));
 //#########################QUESTION 7###########################
 // Log all the values of the users object.
+console.log(Object.values(users));
 //#########################QUESTION 8###########################
 // Using the countries object, print the following info.
 //                 Country name
 //                 Capital
-//                 Populations
+//                 Population
 //                 Languages
-
+function printInfo(arr) {
+  let countryName;
+  let capital;
+  let population;
+  let languages;
+  for (let i = 0; i < arr.length; i++) {
+    countryName = arr[i].name;
+    capital = arr[i].capital;
+    population = arr[i].population;
+    languages = arr[i].languages;
+  }
+  return `This is ${countryName}, it's capital is ${capital}, it has a population of ${population} and these languages are spoken there ${languages}`;
+}
+console.log(printInfo(countries));
 //******************************LEVEL 3*************************
 //#########################QUESTION 1###########################
 // Create a personalAccount object:
